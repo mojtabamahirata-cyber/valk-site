@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Valk — بوت عربي لمنصة زرزور: حماية، ألعاب، اقتصاد</title>
+<meta name="description" content="Valk بوت عربي لمنصة زرزور: حماية ضد الانقلاب والتخريب، ألعاب جماعية (أونو، شطرنج، دامة، بوكر)، اقتصاد، وذكاء اصطناعي.">
+<meta property="og:title" content="Valk"><meta property="og:image" content="assets/poster.jpg">
+<link rel="icon" href="assets/logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head>
+<body data-page="home">
+<header id="nav"></header>
+<main>
+<div class="wrap hero">
+  <span class="pill">بوت عربي لمنصة زرزور</span>
+  <h1>Valk<br><span>سرعة. أمان. ألعاب.</span></h1>
+  <p class="lead">يحمي سيرفرك من الانقلاب والتخريب، ويحوّله لمكان فيه ألعاب جماعية واقتصاد وعوالم، بالعربي وبأوامر بسيطة.</p>
+  <div class="cta"><span data-link="inviteUrl" data-label="أضف Valk لسيرفرك"></span><a class="btn ghost" href="commands.html">شوف الأوامر</a></div>
+  <div class="note">أوامر بالعربي · بدون إعداد معقد</div>
+  <div class="video">
+    <video id="v" autoplay muted loop playsinline preload="metadata" poster="assets/poster.jpg" aria-label="مقدمة Valk">
+      <source src="assets/valk_intro.mp4" type="video/mp4"></video>
+    <button id="snd" type="button">🔊 تشغيل الصوت</button>
+  </div>
+</div>
+
+<section id="stats"><div class="wrap"><div class="stats">
+  <div class="stat"><b id="n-games">–</b><span>مجموعة ألعاب</span></div>
+  <div class="stat"><b id="n-ok">–</b><span>ميزة شغالة</span></div>
+  <div class="stat"><b id="n-cmd">–</b><span>أمر موثّق</span></div>
+  <div class="stat"><b id="n-soon">–</b><span>ميزة قادمة</span></div>
+</div></div></section>
+
+<section id="features"><div class="wrap">
+  <div class="sec-h"><small>المميزات</small><h2>شنو يسوي Valk؟</h2><p>«شغال» يعني موجود بالبوت اليوم. «قريباً» يعني مخطط وما انبنى بعد — ما نكتب ميزة غير موجودة كأنها موجودة.</p></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="uno"><div class="wrap">
+  <div class="sec-h"><small>الألعاب</small><h2>أونو بالستيكرات</h2><p>كل لاعب يرسل ستيكر الورقة بدوره. الورقة غير القانونية أو اللي مو بيدك تنحذف والبوت يخبرك.</p></div>
+  <div class="demo">
+    <div class="chat">
+      <div class="msg"><div class="av">س</div><div><b>سارة</b><div class="bub">اونو</div></div></div>
+      <div class="msg"><div class="av bot"><img src="assets/logo.svg" alt=""></div><div><b>Valk</b><div class="bub">🃏 أونو — لوبي (1/6)
+👥 سارة
+⏳ انضموا، وصاحب اللعبة يضغط «ابدأ».</div></div></div>
+      <div class="msg"><div class="av">ع</div><div><b>علي</b><div class="bub">🔴 احمر 7</div></div></div>
+      <div class="msg"><div class="av bot"><img src="assets/logo.svg" alt=""></div><div><b>Valk</b><div class="bub">علي لعب 🔴7
+🎯 الدور: سارة</div></div></div>
+    </div>
+    <ul class="list">
+      <li>🃏 <b>أوراقي</b> تظهر لك بس برسالة مؤقتة.</li>
+      <li>⌨️ تلعب بالستيكر أو بالكتابة («احمر 5»، «+4 ازرق») أو بالأزرار.</li>
+      <li>⏰ إذا لاعب غاب، أي لاعب يكدر يتخطاه بعد دقيقتين.</li>
+      <li>🏆 ترتيب أسبوعي وشهري وإجمالي لكل لعبة.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-h"><small>جرّب</small><h2>ابدأ بثلاث خطوات</h2></div>
+  <ol class="steps">
+    <li>أضف Valk لسيرفرك على زرزور وأعطه صلاحيات الإدارة (فوق رتب الأدمنية).</li>
+    <li>اكتب <b>/الاعدادات</b> لتضبط الترحيب والردود والرتب.</li>
+    <li>اكتب <b>العاب</b> لتشوف كل الألعاب، أو <b>اونو</b> لتبدأ أول لعبة.</li>
+  </ol>
+  <div class="cta" style="margin-top:22px"><a class="btn" href="support.html">محتاج مساعدة؟</a></div>
+</div></section>
+</main>
+<footer id="foot"></footer>
+<script src="js/config.js"></script><script src="js/data.js"></script><script src="js/app.js"></script>
+<script>
+(function(){
+  var F=window.VALK_FEATURES, C=window.VALK_COMMANDS;
+  var cats=["الكل"].concat(F.map(function(f){return f.cat;}).filter(function(c,i,a){return a.indexOf(c)===i;}));
+  var cur="الكل",tabs=document.getElementById("tabs"),grid=document.getElementById("grid");
+  function draw(){
+    tabs.innerHTML=cats.map(function(c){return '<button class="tab '+(c===cur?'on':'')+'" data-c="'+c+'">'+c+'</button>';}).join("");
+    grid.innerHTML=F.filter(function(f){return cur==="الكل"||f.cat===cur;}).map(function(f){
+      return '<div class="card"><h3>'+f.title+'<span class="badge '+f.status+'">'+(f.status==="ok"?"شغال":"قريباً")+'</span></h3><p>'+f.desc+'</p></div>';}).join("");
+    tabs.querySelectorAll(".tab").forEach(function(b){b.onclick=function(){cur=b.dataset.c;draw();};});
+  }
+  draw();
+  document.getElementById("n-games").textContent=F.filter(function(f){return f.cat==="الألعاب";}).length;
+  document.getElementById("n-ok").textContent=F.filter(function(f){return f.status==="ok";}).length;
+  document.getElementById("n-soon").textContent=F.filter(function(f){return f.status==="soon";}).length;
+  document.getElementById("n-cmd").textContent=C.length;
+  var v=document.getElementById("v"),b=document.getElementById("snd");
+  b.onclick=function(){v.muted=!v.muted;b.textContent=v.muted?"🔊 تشغيل الصوت":"🔇 كتم الصوت";if(!v.muted){v.currentTime=0;v.play();}};
+})();
+</script></body></html>
