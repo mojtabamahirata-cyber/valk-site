@@ -17,9 +17,8 @@
   <div class="cta"><span data-link="inviteUrl" data-label="أضف Valk لسيرفرك"></span><a class="btn ghost" href="commands.html">شوف الأوامر</a></div>
   <div class="note">أوامر بالعربي · بدون إعداد معقد</div>
   <div class="video">
-    <video id="v" autoplay muted loop playsinline preload="metadata" poster="assets/poster.jpg" aria-label="مقدمة Valk">
+    <video id="v" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate" preload="metadata" poster="assets/poster.jpg" aria-label="مقدمة Valk (بدون صوت)">
       <source src="assets/valk_intro.mp4" type="video/mp4"></video>
-    <button id="snd" type="button">🔊 تشغيل الصوت</button>
   </div>
 </div>
 
@@ -85,7 +84,9 @@
   document.getElementById("n-ok").textContent=F.filter(function(f){return f.status==="ok";}).length;
   document.getElementById("n-soon").textContent=F.filter(function(f){return f.status==="soon";}).length;
   document.getElementById("n-cmd").textContent=C.length;
-  var v=document.getElementById("v"),b=document.getElementById("snd");
-  b.onclick=function(){v.muted=!v.muted;b.textContent=v.muted?"🔊 تشغيل الصوت":"🔇 كتم الصوت";if(!v.muted){v.currentTime=0;v.play();}};
+  // 🔇 الفيديو بدون صوت إجباري (لا زر تشغيل ولا إطفاء)، حتى لو حاول المتصفح يرجّع الصوت نكتمه
+  var v=document.getElementById("v");
+  v.muted=true;v.defaultMuted=true;v.volume=0;
+  v.addEventListener("volumechange",function(){if(!v.muted||v.volume>0){v.muted=true;v.volume=0;}});
 })();
 </script></body></html>
