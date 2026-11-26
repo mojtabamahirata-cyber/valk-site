@@ -9,6 +9,6 @@
    '<button class="menu-btn" id="mb" aria-label="القائمة">☰</button></div>';
    document.getElementById("mb").onclick=function(){document.getElementById("links").classList.toggle("open");};}
   var f=document.getElementById("foot");
-  if(f){f.innerHTML='<div class="wrap"><div>© '+new Date().getFullYear()+' '+V.name+' — بوت عربي لمنصة زرزور</div><div><a href="commands.html">الأوامر</a> · <a href="updates.html">التحديثات</a> · <a href="support.html">الدعم</a></div></div>';}
+  if(f){f.innerHTML='<div class="wrap"><div>© '+new Date().getFullYear()+' '+V.name+' — بوت عربي لمنصة زرزور</div><div><a href="commands.html">الأوامر</a> · <a href="updates.html">التحديثات</a> · <a href="support.html">الدعم</a> · <a href="privacy.html">الخصوصية</a> · <a href="terms.html">الشروط</a></div></div>';}
   document.querySelectorAll("[data-link]").forEach(function(el){el.outerHTML=link(V[el.dataset.link],el.dataset.label,el.dataset.cls);});
 })();
