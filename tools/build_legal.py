@@ -39,7 +39,7 @@ def page(doc, other_href, other_label, filename):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(doc["title"])} — {E(L.BOT)}</title><link rel="icon" href="assets/logo.svg">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css"></head>
+<link rel="stylesheet" href="css/style.css?v=2.14"></head>
 <body data-page="legal"><header id="nav"></header>
 <main><div class="wrap" style="padding-top:40px;padding-bottom:50px;max-width:820px">
   <div class="sec-h"><small>قانوني</small><h2>{E(doc["title"])}</h2><p>آخر تحديث: {E(L.UPDATED)}</p></div>
@@ -49,7 +49,7 @@ def page(doc, other_href, other_label, filename):
   <div class="cta" style="justify-content:flex-start;margin-top:14px"><span data-link="supportUrl" data-label="سيرفر الدعم"></span><a class="btn ghost" href="{other_href}">{other_label}</a></div>
 </div></main>
 <footer id="foot"></footer>
-<script src="js/config.js"></script><script src="js/app.js"></script></body></html>
+<script src="js/config.js?v=2.14"></script><script src="js/app.js?v=2.14"></script></body></html>
 '''
 
 
