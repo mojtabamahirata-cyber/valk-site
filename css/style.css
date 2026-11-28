@@ -65,3 +65,11 @@ ol.steps{counter-reset:s;display:grid;gap:12px;padding:0;list-style:none}
 ol.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px 14px 18px;position:relative;padding-inline-start:58px}
 ol.steps li:before{content:counter(s);position:absolute;inset-inline-start:16px;top:12px;width:30px;height:30px;border-radius:50%;background:#fff;color:#000;display:grid;place-items:center;font-weight:800}
 @media(max-width:780px){.links{display:none;position:absolute;top:64px;inset-inline:0;background:#000;border-bottom:1px solid var(--line);flex-direction:column;padding:10px}.links.open{display:flex}.links a{width:100%}.menu-btn{display:block}.demo{grid-template-columns:1fr}.cmd{grid-template-columns:1fr;gap:6px}}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px)}
+.modal-box{position:relative;max-width:460px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px 22px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.modal-box h3{margin:0 0 10px;font-size:21px}
+.modal-box p{margin:0 0 12px;color:var(--txt);line-height:1.85}
+.modal-note{color:var(--mut)!important;font-size:14px}
+.modal-x{position:absolute;top:12px;left:12px;background:none;border:1px solid var(--line);color:var(--mut);border-radius:10px;width:34px;height:34px;font-size:16px;cursor:pointer}
+.modal-act{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.modal [hidden]{display:none!important}
