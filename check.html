@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>فحص إعدادات الموقع</title>
+<style>body{font-family:Tahoma,system-ui,sans-serif;background:#000;color:#f4f4f5;margin:0;padding:18px;line-height:1.9}
+h1{font-size:20px}.row{border:1px solid #26262b;border-radius:12px;padding:10px 14px;margin:10px 0;background:#101013;word-break:break-all}
+.ok{color:#34d399}.bad{color:#f87171}code{direction:ltr;unicode-bidi:plaintext;color:#fbbf24}</style></head>
+<body><h1>🔎 فحص إعدادات الموقع</h1><p>صوّر هذي الصفحة وأرسلها.</p><div id="out"></div>
+<script>
+(function(){
+  var out=document.getElementById("out");
+  function row(ok,txt){var d=document.createElement("div");d.className="row";d.innerHTML='<span class="'+(ok?'ok':'bad')+'">'+(ok?'✅':'❌')+'</span> '+txt;out.appendChild(d);}
+  var errs=[];window.addEventListener("error",function(e){errs.push(e.message+" ("+(e.filename||"").split("/").pop()+":"+e.lineno+")");});
+  function loadCfg(cb){var s=document.createElement("script");s.src="js/config.js?x="+Date.now();s.onload=function(){cb(true)};s.onerror=function(){cb(false)};document.head.appendChild(s);}
+  loadCfg(function(loaded){
+    if(!loaded)row(false,"ملف <code>js/config.js</code> ما انحمّل (ما موجود بالموقع أو فيه خطأ).");
+    var V=window.VALK;
+    if(!V){row(false,"<code>window.VALK</code> غير معرّف: ملف config.js فيه خطأ كتابة (علامة اقتباس أو فاصلة ناقصة) أو غير موجود."+(errs.length?"<br>الخطأ: <code>"+errs[0]+"</code>":""));}
+    else{
+      row(true,"config.js انقرأ بنجاح.");
+      row(!!V.inviteUrl,"inviteUrl: "+(V.inviteUrl?'<code>'+V.inviteUrl+'</code>':"<b>فاضي</b> ← لهذا الزر يطلع «قريباً»"));
+      row(!!V.supportUrl,"supportUrl: "+(V.supportUrl?'<code>'+V.supportUrl+'</code>':"فاضي"));
+      if(V.inviteUrl&&!/^https?:\/\//.test(V.inviteUrl))row(false,"inviteUrl لازم يبدأ بـ <code>https://</code>.");
+    }
+    fetch("js/app.js?x="+Date.now()).then(function(r){return r.text()}).then(function(t){
+      row(/inviteModal/.test(t),"app.js المنشور "+(/inviteModal/.test(t)?"فيه نافذة «أضف لسيرفرك» (النسخة الجديدة).":"قديم (ما فيه النافذة)."));
+    }).catch(function(e){row(false,"ما قدرت أقرأ app.js: "+e);});
+    fetch("index.html?x="+Date.now()).then(function(r){return r.text()}).then(function(t){
+      var m=t.match(/js\/config\.js(\?v=[\d.]+)?/);row(!!(m&&m[1]),"index.html المنشور يحمّل: <code>"+(m?m[0]:"؟")+"</code> "+((m&&m[1])?"(نسخة جديدة)":"(قديمة)"));
+    }).catch(function(){});
+  });
+})();
+</script></body></html>
